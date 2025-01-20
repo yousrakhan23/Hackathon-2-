@@ -88,9 +88,17 @@ import { getProducts } from "@/sanity/lib/fetch";
 import Link from "next/link";
 import Image from "next/image";
 
+interface Product {
+  _id: string;
+  imageUrl: string;
+  title: string;
+  description: string;
+  price: number;
+}
+
 const ProductPage = async () => {
   // Fetch products
-  const products = await getProducts();
+  const products: Product[] = await getProducts();
 
   if (!products || products.length === 0) {
     return (
@@ -102,31 +110,34 @@ const ProductPage = async () => {
 
   return (
     <div className="container mx-auto px-4 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-  {products.map((product: any) => (
-    <Link
-      key={product._id}
-      href={`/Product/${product._id}`}
-      className="block border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200"
-    >
-      {/* Product Image */}
-      <Image
-        src={product.imageUrl}
-        alt={product.title}
-        className="w-full h-auto object-cover transition-transform duration-200 hover:scale-105"
-        width={300}
-        height={300}
-      />
+      {products.map((product: Product) => (
+        <Link
+          key={product._id}
+          href={`/Product/${product._id}`}
+          className="block border border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200"
+        >
+          {/* Product Image */}
+          <Image
+            src={product.imageUrl}
+            alt={product.title}
+            className="w-full h-auto object-cover transition-transform duration-200 hover:scale-105"
+            width={300}
+            height={300}
+          />
 
-      {/* Product Info */}
-      <div className="p-4">
-        <h2 className="text-lg font-semibold text-gray-800">{product.title}</h2>
-        <p className="text-sm text-gray-500 truncate">{product.description}</p>
-        <p className="text-green-600 font-bold mt-2">${product.price}</p>
-      </div>
-    </Link>
-  ))}
-</div>
-
+          {/* Product Info */}
+          <div className="p-4">
+            <h2 className="text-lg font-semibold text-gray-800">
+              {product.title}
+            </h2>
+            <p className="text-sm text-gray-500 truncate">
+              {product.description}
+            </p>
+            <p className="text-green-600 font-bold mt-2">${product.price}</p>
+          </div>
+        </Link>
+      ))}
+    </div>
   );
 };
 
