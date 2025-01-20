@@ -5,7 +5,7 @@ import Fea_Prod1 from "@/public/images/fp_1.png";
 import Fea_Prod2 from "@/public/images/fp_2.png";
 import Fea_Prod3 from "@/public/images/fp_3.png";
 import Fea_Prod4 from "@/public/images/fp_4.png";
-import cart from "@/public/images/Add Cart.png";
+import cart from "@/public/images/cart.png"
 import green_button from "@/public/images/Products Status.png";
 import orange_button from "@/public/images/Products Status (1).png";
 import { Inter } from "next/font/google";

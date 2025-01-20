@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { useRouter } from "next/navigation"; // Import useRouter for navigation
 import Image from "next/image";
 import hero_section from "@/public/images/herosectionImg.png";
 import { Inter } from "next/font/google";
@@ -19,6 +20,12 @@ const fontInter400 = Inter({ weight: "400", subsets: ["latin"] });
 const fontInter700 = Inter({ weight: "700", subsets: ["latin"] });
 
 const HeroSection = () => {
+  const router = useRouter(); // Initialize useRouter
+
+  const handleShopNow = () => {
+    router.push("/Product"); // Navigate to the Product page
+  };
+
   return (
     <div>
       <div className="h-[550px] bg-[#F0F2F3] flex flex-col lg:flex-row items-center lg:justify-center">
@@ -35,6 +42,7 @@ const HeroSection = () => {
           </h1>
           <div className="w-[171px] h-[52px] pt-4 mx-auto lg:pt-[6rem] lg:ml-[24rem]">
             <button
+              onClick={handleShopNow} // Add onClick handler
               className={`${fontInter400.className} text-[#FFFFFF] bg-[#029FAE] w-[171px] h-[52px] rounded-[8px]`}
             >
               Shop Now {"->"}
@@ -42,25 +50,14 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="mt-8 lg:mt-0 lg:absolute lg:top-[290px] lg:right-0 lg:left-[1100px]">
-  <Image
-    src={hero_section}
-    alt="hero_section"
-    width={360}
-    height={574}
-    className="mx-auto lg:mx-0 scale-50 sm:scale-75 md:scale-100"
-  />
-</div>
-
-
-        {/* <div>
           <Image
             src={hero_section}
             alt="hero_section"
             width={360}
             height={574}
-            className="absolute top-[290px] right-0 left-[1100px]"
+            className="mx-auto lg:mx-0 scale-50 sm:scale-75 md:scale-100"
           />
-        </div> */}
+        </div>
       </div>
       {/* logo images */}
       <div className="bg-white py-6 px-4">

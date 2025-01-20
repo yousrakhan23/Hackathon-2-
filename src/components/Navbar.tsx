@@ -112,9 +112,7 @@ const Navbar = () => {
       <li className="hover:text-[#007580]">
         <Link href="/Product">Product</Link>
       </li>
-      <li className="hover:text-[#007580]">
-        <Link href="/Pages">Pages</Link>
-      </li>
+      
       <li className="hover:text-[#007580]">
         <Link href="/About">About</Link>
       </li>
@@ -153,9 +151,7 @@ const Navbar = () => {
         <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
           <Link href="/Product">Product</Link>
         </li>
-        <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
-          <Link href="/Pages">Pages</Link>
-        </li>
+       
         <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
           <Link href="/About">About</Link>
         </li>

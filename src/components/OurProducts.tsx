@@ -8,8 +8,7 @@ import Fea_Prod4 from "@/public/images/fp_4.png";
 import prod5 from "@/public/images/Image (4).png";
 import prod6 from "@/public/images/card (1).png";
 import prod7 from "@/public/images/Image (7).png";
-
-import cart from "@/public/images/Add Cart.png";
+import cart from "@/public/images/cart.png";
 
 
 const OurProducts = () => {
