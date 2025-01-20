@@ -79,6 +79,7 @@
 
 import { getProducts } from "@/sanity/lib/fetch";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
 const ProductDetail = async ({ params }: { params: { id: string } }) => {
   const products = await getProducts();
@@ -89,17 +90,32 @@ const ProductDetail = async ({ params }: { params: { id: string } }) => {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <img
+    <div className="container mx-auto px-4 py-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    {/* Image Section */}
+    <div className="flex justify-center">
+      <Image
         src={product.imageUrl}
         alt={product.title}
-        className="w-full h-64 object-cover rounded-lg"
+        className="w-full max-w-md h-auto rounded-lg object-cover shadow-md"
+        width={500}
+        height={500}
       />
-      <h1 className="text-3xl font-bold mt-4">{product.title}</h1>
-      <p className="text-gray-700 text-lg mt-2">{product.description}</p>
-      <p className="text-green-600 text-xl font-semibold mt-4">${product.price}</p>
-      <p className="text-sm text-gray-500 mt-2">Stock: {product.inventory}</p>
     </div>
+
+    {/* Product Details Section */}
+    <div className="flex flex-col justify-center space-y-4">
+      <h1 className="text-4xl font-bold text-gray-800">{product.title}</h1>
+      <p className="text-lg text-gray-600 leading-relaxed">{product.description}</p>
+      <p className="text-2xl font-semibold text-green-600">${product.price}</p>
+      <p className="text-sm text-gray-500">Stock: {product.inventory}</p>
+      <button className="px-6 py-3 mt-6 text-white bg-black rounded-md shadow hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
+
   );
 };
 
