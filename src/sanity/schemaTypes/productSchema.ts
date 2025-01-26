@@ -26,7 +26,7 @@ export const productSchema = defineType({
       type: "string",
     },
     {
-      name: "image",
+      name: "imageUrl",
       title: "Product Image",
       type: "image",
       options: {

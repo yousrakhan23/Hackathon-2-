@@ -76,19 +76,15 @@
 // };
 
 // export default ProductDetail;
-
+"use client";
 import { getProducts } from "@/sanity/lib/fetch";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { addToCart } from "@/app/actions/actions";
+import { Product } from "@/sanity/types/products";
+import Swal from "sweetalert2";
 
-interface Product {
-  _id: string;
-  imageUrl: string;
-  title: string;
-  description: string;
-  price: number;
-  inventory: number;
-}
+
 
 const ProductDetail = async ({ params }: { params: { id: string } }) => {
   const products: Product[] = await getProducts();
@@ -97,6 +93,20 @@ const ProductDetail = async ({ params }: { params: { id: string } }) => {
   if (!product) {
     return notFound(); // Show a 404 page if the product is not found
   }
+
+  const handleAddToCart = (e: React.MouseEvent, product : Product) => {
+    e.preventDefault();
+    Swal.fire({
+      position : "top-right",
+      icon : "success",
+      title : `${product.title} added to cart`,
+      showConfirmButton : false,
+      timer : 2000
+    })
+    addToCart(product)
+    // alert("Product added to cart");
+    // console.log(handleAddToCart);
+  };
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -118,7 +128,8 @@ const ProductDetail = async ({ params }: { params: { id: string } }) => {
           <p className="text-lg text-gray-600 leading-relaxed">{product.description}</p>
           <p className="text-2xl font-semibold text-green-600">${product.price}</p>
           <p className="text-sm text-gray-500">Stock: {product.inventory}</p>
-          <button className="px-6 py-3 mt-6 text-white bg-black rounded-md shadow hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2">
+          <button className="px-6 py-3 mt-6 text-white bg-black rounded-md shadow hover:bg-white hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2" 
+          onClick={(e) => handleAddToCart(e, product)}>
             Add to Cart
           </button>
         </div>
@@ -128,4 +139,3 @@ const ProductDetail = async ({ params }: { params: { id: string } }) => {
 };
 
 export default ProductDetail;
-
