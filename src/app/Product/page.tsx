@@ -133,7 +133,7 @@ const ProductPage = async () => {
             <p className="text-sm text-gray-500 truncate">
               {product.description}
             </p>
-            <p className="text-green-600 font-bold mt-2">${product.price}</p>
+            <p className="text-red-800 font-bold mt-2">${product.price}</p>
           </div>
         </Link>
       ))}

@@ -5,12 +5,12 @@ import Link from "next/link";
 import { Inter } from "next/font/google";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
+
 const fontInter500 = Inter({ weight: "500", subsets: ["latin"] });
 const Navbar = () => {
   return (
     <div>
       <div className="bg-[#F0F2F3] py-9 mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
-
         <svg
           width="166"
           height="40"
@@ -18,7 +18,6 @@ const Navbar = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           // className="mx-auto sm:mx-[10rem] md:mx-[15rem] lg:mx-[19rem] "
-        
         >
           <g clipPath="url(#clip0_1_889)">
             <path
@@ -40,129 +39,82 @@ const Navbar = () => {
             </clipPath>
           </defs>
         </svg>
-        <Link href={"/Cart"} >
-        <div className="absolute left-[50%] transform -translate-x-1/2 sm:left-[60%] md:left-[70%] lg:left-[76%] ">
-          <svg
-            width="120"
-            height="44"
-            viewBox="0 0 120 44"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className="top-[50%] -translate-y-full ml-[11rem] sm:ml-0"
+        
+        <Link href="/Cart">
+          <div
+            className="absolute left-1/2 transform -translate-x-1/2 sm:left-[60%] md:left-[70%] lg:left-[76%] 
+                flex items-center justify-center w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full shadow-md 
+                text-xl text-gray-800 hover:text-black transition-all duration-200 cursor-pointer"
           >
-            <rect width="120" height="44" rx="8" fill="white" />
-            <path
-              d="M18.5209 13.9791L20.4275 14.3091L21.3103 24.826C21.3442 25.2399 21.5329 25.6257 21.8387 25.9066C22.1446 26.1875 22.5451 26.3427 22.9603 26.3413H32.9611C33.3587 26.3417 33.7431 26.1986 34.0436 25.9382C34.344 25.6778 34.5404 25.3177 34.5965 24.9241L35.4673 18.9126C35.4905 18.7528 35.482 18.5899 35.4422 18.4333C35.4024 18.2767 35.3322 18.1295 35.2354 18.0001C35.1387 17.8707 35.0175 17.7616 34.8786 17.6791C34.7397 17.5966 34.5859 17.5423 34.426 17.5193C34.3673 17.5129 20.7337 17.5083 20.7337 17.5083"
-              stroke="#272343"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M28.948 20.8954H31.4899"
-              stroke="#272343"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M22.5579 29.5194C22.6251 29.5165 22.6922 29.5272 22.7552 29.551C22.8181 29.5747 22.8756 29.611 22.9242 29.6575C22.9728 29.704 23.0115 29.7599 23.0379 29.8218C23.0643 29.8837 23.0779 29.9503 23.0779 30.0176C23.0779 30.0849 23.0643 30.1515 23.0379 30.2133C23.0115 30.2752 22.9728 30.3311 22.9242 30.3777C22.8756 30.4242 22.8181 30.4605 22.7552 30.4842C22.6922 30.5079 22.6251 30.5187 22.5579 30.5158C22.4294 30.5103 22.3081 30.4554 22.2191 30.3626C22.1302 30.2697 22.0806 30.1461 22.0806 30.0176C22.0806 29.889 22.1302 29.7654 22.2191 29.6726C22.3081 29.5798 22.4294 29.5249 22.5579 29.5194Z"
-              fill="#272343"
-              stroke="#272343"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              fillRule="evenodd"
-              clipRule="evenodd"
-              d="M32.8988 29.5194C33.0312 29.5194 33.1583 29.572 33.252 29.6657C33.3457 29.7594 33.3983 29.8865 33.3983 30.019C33.3983 30.1515 33.3457 30.2786 33.252 30.3723C33.1583 30.4659 33.0312 30.5186 32.8988 30.5186C32.7663 30.5186 32.6392 30.4659 32.5455 30.3723C32.4518 30.2786 32.3992 30.1515 32.3992 30.019C32.3992 29.8865 32.4518 29.7594 32.5455 29.6657C32.6392 29.572 32.7663 29.5194 32.8988 29.5194Z"
-              fill="#272343"
-              stroke="#272343"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M54.6507 20.6108C54.3525 18.7443 52.8908 17.6534 51.0456 17.6534C48.7871 17.6534 47.1209 19.3452 47.1209 22.1364C47.1209 24.9276 48.7786 26.6193 51.0456 26.6193C52.9632 26.6193 54.3652 25.4176 54.6507 23.6918L53.3212 23.6875C53.0953 24.804 52.1578 25.4176 51.0542 25.4176C49.5584 25.4176 48.4292 24.2713 48.4292 22.1364C48.4292 20.0185 49.5542 18.8551 51.0584 18.8551C52.1706 18.8551 53.1039 19.4815 53.3212 20.6108H54.6507ZM58.0289 26.6449C59.1113 26.6449 59.7207 26.0952 59.9636 25.6051H60.0147V26.5H61.2591V22.1534C61.2591 20.2486 59.7591 19.8693 58.7193 19.8693C57.5346 19.8693 56.4437 20.3466 56.0176 21.5398L57.215 21.8125C57.4025 21.348 57.8798 20.9006 58.7363 20.9006C59.5588 20.9006 59.9806 21.331 59.9806 22.0724V22.1023C59.9806 22.5668 59.5034 22.5582 58.3272 22.6946C57.0872 22.8395 55.8173 23.1634 55.8173 24.6506C55.8173 25.9375 56.7846 26.6449 58.0289 26.6449ZM58.3059 25.6222C57.5858 25.6222 57.0659 25.2983 57.0659 24.6676C57.0659 23.9858 57.671 23.7429 58.4082 23.6449C58.8216 23.5895 59.8017 23.4787 59.9849 23.2955V24.1392C59.9849 24.9148 59.367 25.6222 58.3059 25.6222ZM62.9561 26.5H64.2303V22.5028C64.2303 21.6463 64.8908 21.0284 65.7942 21.0284C66.0584 21.0284 66.3567 21.0753 66.459 21.1051V19.8864C66.3311 19.8693 66.0797 19.8565 65.9178 19.8565C65.1507 19.8565 64.4945 20.2912 64.2559 20.9943H64.1877V19.9545H62.9561V26.5ZM71.0037 19.9545H69.6614V18.3864H68.3873V19.9545H67.4284V20.9773H68.3873V24.8423C68.383 26.0312 69.2907 26.6065 70.2963 26.5852C70.7012 26.581 70.9739 26.5043 71.123 26.4489L70.8929 25.3963C70.8077 25.4134 70.65 25.4517 70.4455 25.4517C70.0321 25.4517 69.6614 25.3153 69.6614 24.5781V20.9773H71.0037V19.9545Z"
-              fill="#272343"
-            />
-            <circle cx="94" cy="22" r="10" fill="#007580" />
-            <path
-              d="M91.7087 25V24.24C92.162 23.88 92.5953 23.5167 93.0087 23.15C93.422 22.7833 93.7887 22.4233 94.1087 22.07C94.4353 21.71 94.692 21.36 94.8787 21.02C95.0653 20.6733 95.1587 20.34 95.1587 20.02C95.1587 19.8067 95.122 19.6067 95.0487 19.42C94.9753 19.2267 94.8553 19.0733 94.6887 18.96C94.522 18.84 94.2987 18.78 94.0187 18.78C93.5987 18.78 93.282 18.9133 93.0687 19.18C92.862 19.4467 92.762 19.7667 92.7687 20.14H91.7387C91.7453 19.6467 91.8487 19.2333 92.0487 18.9C92.2553 18.5667 92.5287 18.3133 92.8687 18.14C93.2153 17.9667 93.6053 17.88 94.0387 17.88C94.6987 17.88 95.2253 18.0667 95.6187 18.44C96.0187 18.8067 96.2187 19.32 96.2187 19.98C96.2187 20.3733 96.122 20.7633 95.9287 21.15C95.742 21.5367 95.4953 21.91 95.1887 22.27C94.8887 22.6233 94.5653 22.9567 94.2187 23.27C93.872 23.5833 93.542 23.8667 93.2287 24.12H96.4287V25H91.7087Z"
-              fill="white"
-            />
-          </svg>
-        </div></Link>
+            🛒
+          </div>
+        </Link>
       </div>
-{/* navbar */}
-<div>
-  <nav className="h-[84px] hidden lg:block">
-    <ul
-      className={`${fontInter500.className} flex items-center gap-8 ml-[19rem] mt-7 text-[#636270]`}
-    >
-      <li className="hover:text-[#007580]">
-        <Link href="/">Home</Link>
-      </li>
-      <li className="hover:text-[#007580]">
-        <Link href="/Shop">Shop</Link>
-      </li>
-      <li className="hover:text-[#007580]">
-        <Link href="/Product">Product</Link>
-      </li>
-      
-      <li className="hover:text-[#007580]">
-        <Link href="/About">About</Link>
-      </li>
+      {/* navbar */}
+      <div>
+        <nav className="h-[84px] hidden lg:block">
+          <ul
+            className={`${fontInter500.className} flex items-center gap-8 ml-[19rem] mt-7 text-[#636270]`}
+          >
+            <li className="hover:text-[#007580]">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="hover:text-[#007580]">
+              <Link href="/Shop">Shop</Link>
+            </li>
+            <li className="hover:text-[#007580]">
+              <Link href="/Product">Product</Link>
+            </li>
 
-      <Link href="/Contact">
-        <span className="text-[#636270] ml-[29rem] underline">
-          Contact:
-          <span className="text-[#272343] underline">(808) 555-0111</span>
-        </span>
-      </Link>
-    </ul>
-  </nav>
+            <li className="hover:text-[#007580]">
+              <Link href="/About">About</Link>
+            </li>
 
-  {/* Responsive Navbar */}
-  <div className="lg:hidden">
-    <Sheet>
-      <SheetTrigger>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          height="40px"
-          viewBox="0 -960 960 960"
-          width="40px"
-          fill="#000"
-          className="block ml-[18rem]"
-        >
-          <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-        </svg>
-      </SheetTrigger>
-      <SheetContent className="w-screen bg-[#766ac5] h-screen flex flex-col justify-center items-center gap-6">
-        <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
-          <Link href="/">Home</Link>
-        </li>
-        <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
-          <Link href="/Shop">Shop</Link>
-        </li>
-        <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
-          <Link href="/Product">Product</Link>
-        </li>
-       
-        <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
-          <Link href="/About">About</Link>
-        </li>
-        <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
-          <Link href="/Contact">Contact</Link>
-        </li>
-      </SheetContent>
-    </Sheet>
-  </div>
-</div>
+            <Link href="/Contact">
+              <span className="text-[#636270] ml-[29rem] underline">
+                Contact:
+                <span className="text-[#272343] underline">(808) 555-0111</span>
+              </span>
+            </Link>
+          </ul>
+        </nav>
 
+        {/* Responsive Navbar */}
+        <div className="lg:hidden">
+          <Sheet>
+            <SheetTrigger>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="40px"
+                viewBox="0 -960 960 960"
+                width="40px"
+                fill="#000"
+                className="block ml-[18rem]"
+              >
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+              </svg>
+            </SheetTrigger>
+            <SheetContent className="w-screen bg-[#766ac5] h-screen flex flex-col justify-center items-center gap-6">
+              <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
+                <Link href="/Shop">Shop</Link>
+              </li>
+              <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
+                <Link href="/Product">Product</Link>
+              </li>
+
+              <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
+                <Link href="/About">About</Link>
+              </li>
+              <li className="list-none text-[#FFFFFF] hover:text-[#272343]">
+                <Link href="/Contact">Contact</Link>
+              </li>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </div>
     </div>
   );
 };
