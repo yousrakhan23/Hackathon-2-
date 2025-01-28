@@ -1,3 +1,11 @@
+
+HACKATHON 2025 (day 1 to day 7)
+
+https://github.com/yousrakhan23/Hackathon-2-.git
+
+https://hackathon-2-5ia1.vercel.app 
+
+
 Comforty Marketplace
 A modern online marketplace for customizable and high-quality furniture, built to provide an exceptional shopping experience with dynamic features, seamless backend integration, and user-friendly design.Table of Contents
 Introduction
@@ -82,8 +90,3 @@ Submit a pull request with a detailed description of the changes made.
 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-repo:HACKATHON 2025 (day 1 to day 7)
-
-https://github.com/yousrakhan23/Hackathon-2-.git
-
-https://hackathon-2-5ia1.vercel.app 
