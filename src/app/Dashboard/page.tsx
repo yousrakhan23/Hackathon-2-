@@ -37,6 +37,12 @@ const Dashboard = () => {
           >
             Settings
           </Link>
+          <Link
+            href="/Checkout"
+            className="text-lg hover:bg-[#64a5c4] px-4 py-2 rounded-lg transition"
+          >
+            Checkout
+          </Link>
         </nav>
       </aside>
 
