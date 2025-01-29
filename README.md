@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+HACKATHON 2025 (day 1 to day 7)
 
-## Getting Started
+https://github.com/yousrakhan23/Hackathon-2-.git
 
-First, run the development server:
+https://hackathon-2-5ia1.vercel.app 
 
-```bash
+
+Comforty Marketplace
+A modern online marketplace for customizable and high-quality furniture, built to provide an exceptional shopping experience with dynamic features, seamless backend integration, and user-friendly design.Table of Contents
+Introduction
+Features
+Technologies Used
+Setup Instructions
+Project Structure
+Contributing
+License
+Contact Information
+A well-structured README.md file is essential for making your project accessible and understandable to others. Below is a suggested structure for the README.md file for your Comforty Marketplace project:
+
+Comforty Marketplace
+A modern online marketplace for customizable and high-quality furniture, built to provide an exceptional shopping experience with dynamic features, seamless backend integration, and user-friendly design.
+
+Table of Contents
+Introduction
+Features
+Technologies Used
+Setup Instructions
+Project Structure
+Contributing
+License
+Contact Information
+Introduction
+Comforty Marketplace is a full-stack e-commerce platform designed for selling furniture online. It provides a seamless shopping experience with features like product comparison, cart functionality, inventory management, and more. The platform is built using modern frameworks and follows best practices for performance, scalability, and maintainability.
+
+Features
+Dynamic Product Pages: Personalized product pages with detailed descriptions and images.
+Product Comparison: Compare features of multiple products side-by-side.
+Cart and Checkout: Add items to the cart and complete orders with a secure checkout process.
+Inventory Management: Real-time stock tracking for efficient resource management.
+Sanity CMS Integration: Manage and update content dynamically via Sanity CMS.
+Responsive Design: Fully optimized for desktop and mobile users.
+Technologies Used
+Frontend: Next.js, Tailwind CSS
+Backend: Node.js, Sanity CMS (for content management), GROQ queries
+Database: Sanity CMS, integrated for dynamic data
+Deployment: Vercel
+Other Tools: Git, ESLint, Prettier
+Setup Instructions
+Prerequisites
+Node.js installed on your system
+A Sanity CMS account
+Steps to Run Locally
+Clone the repository:
+
+bash
+Copy
+Edit
+git clone <repository-url>
+cd comforty-marketplace
+Install dependencies:
+
+bash
+Copy
+Edit
+npm install
+Set up environment variables:
+
+Create a .env file in the root directory.
+Add your Sanity API keys and any other required environment variables.
+Run the development server:
+
+bash
+Copy
+Edit
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Access the project in your browser at http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Project Structure
+/pages: Next.js pages for routing.
+/components: Reusable React components for the UI.
+/lib: Utility functions and Sanity integration logic.
+/styles: Global and component-specific styles using Tailwind CSS.
+Contributing
+Contributions are welcome! To contribute:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Fork the repository.
+Create a new branch for your feature or bug fix.
+Submit a pull request with a detailed description of the changes made.
+License
+This project is licensed under the MIT License. See the LICENSE file for more details.
