@@ -152,12 +152,33 @@ import Image from "next/image";
 import { addToCart } from "@/app/actions/actions";
 import Swal from "sweetalert2";
 import { Product } from "@/sanity/types/products";
+import { useEffect, useState } from "react";
+import Loader from "@/components/Loader";
 
-const ProductDetail = async ({ params }: { params: { id: string } }) => {
-  const products = await getProducts();
+const ProductDetail = ({ params }: { params: { id: string } }) => {
+  const [loading, setLoading] = useState(true);
+  const [product, setProduct] = useState<Product | null>(null);
 
-  // Find product by ID
-  const product = products.find((p: Product) => p._id === params.id);
+  useEffect(() => {
+    const fetchData = async () => {
+      const products = await getProducts();
+      const foundProduct = products.find((p: Product) => p._id === params.id);
+      if (!foundProduct) return notFound();
+      setProduct(foundProduct);
+      setLoading(false);
+    };
+
+    fetchData();
+  }, [params.id]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <Loader />
+      </div>
+    );
+  }
+
   if (!product) return notFound();
 
   const handleAddToCart = (e: React.MouseEvent) => {
