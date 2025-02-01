@@ -168,7 +168,7 @@
 import { Product } from "@/sanity/types/products";
 import { CgChevronRight } from "react-icons/cg";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+
 import { getCartItems } from "../actions/actions";
 import Link from "next/link";
 import Image from "next/image";
