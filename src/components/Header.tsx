@@ -15,7 +15,7 @@ const fontInter400 = Inter({ weight: "400", subsets: ["latin"] });
 const Header = () => {
   return (
     <div>
-      <div className="lg:hidden bg-[#80bbd8]">
+      <div className="lg:hidden bg-[#029FAE]">
         <Sheet>
           <SheetTrigger>
             <svg
@@ -29,7 +29,7 @@ const Header = () => {
               <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
             </svg>
           </SheetTrigger>
-          <SheetContent className="w-screen bg-[#80bbd8] h-screen flex flex-col justify-center items-center gap-6">
+          <SheetContent className="w-screen bg-[#029FAE] h-screen flex flex-col justify-center items-center gap-6">
             <li className="list-none text-[#FFFFFF] text-2xl hover:text-[#272343]">
               <Link href="/">Home</Link>
             </li>

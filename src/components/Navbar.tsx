@@ -14,7 +14,7 @@ const fontInter500 = Inter({ weight: "500", subsets: ["latin"] });
 const Navbar = () => {
   return (
     <div>
-      <div className="bg-[#80bbd8] py-6 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
+      <div className="bg-[#40d5e2] py-6 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32">
         {/* Top Container */}
         <div className="flex items-center justify-between">
           {/* Logo Section */}
@@ -107,15 +107,15 @@ const Navbar = () => {
           <ul
             className={`${fontInter500.className} flex items-center gap-8 ml-[19rem] mt-7 text-[#636270]`}
           >
-            <li className="hover:text-[#007580]">
+            <li className="hover:text-[#007580] hover:underline-offset-8 hover:underline">
               <Link href="/">Home</Link>
             </li>
 
-            <li className="hover:text-[#007580]">
-              <Link href="/Product">Product</Link>
+            <li className="hover:text-[#007580] hover:underline-offset-8 hover:underline">
+              <Link href="/Product">Product</Link> 
             </li>
 
-            <li className="hover:text-[#007580]">
+            <li className="hover:text-[#007580] hover:underline-offset-8 hover:underline">
               <Link href="/About">About</Link>
             </li>
 

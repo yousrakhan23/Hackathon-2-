@@ -102,6 +102,7 @@ import {
 import { Product } from "@/sanity/types/products";
 import Swal from "sweetalert2";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 const Cart = () => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
 
@@ -150,6 +151,8 @@ const Cart = () => {
     );
   };
 
+  const router = useRouter();
+
   const handleProceed = () => {
     Swal.fire({
       title: "Proceed to checkout?",
@@ -162,6 +165,7 @@ const Cart = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire("Success", "Your order has been placed", "success");
+        router.push("/Checkout")
         setCartItems([]);
       }
     });
@@ -229,7 +233,7 @@ const Cart = () => {
               <span>${calculateTotal().toFixed(2)}</span>
             </div>
             <button
-              className="w-full mt-4 py-2 bg-black text-white rounded-lg shadow hover:bg-gray-800"
+              className="w-full mt-4 py-2 bg-[#029FAE] text-white rounded-lg shadow hover:bg-[#30a0aa] transition ease-in-out duration-300"
               onClick={handleProceed}
             >
               Proceed to Checkout
@@ -242,11 +246,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-{/* <div>
-        {cartItems.map((item) => (
-          <div key={item._id}>
-            {item.title}
-            </div>
-        ))}
-      </div> */}

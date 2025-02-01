@@ -145,14 +145,97 @@
 // export default ProductDetail;
 
 
+// "use client";
+// import { getProducts } from "@/sanity/lib/fetch";
+// import { notFound } from "next/navigation";
+// import Image from "next/image";
+// import { addToCart } from "@/app/actions/actions";
+// import Swal from "sweetalert2";
+// import { Product } from "@/sanity/types/products";
+// import { useEffect, useState } from "react";
+// import Loader from "@/components/Loader";
+
+// const ProductDetail = ({ params }: { params: { id: string } }) => {
+//   const [loading, setLoading] = useState(true);
+//   const [product, setProduct] = useState<Product | null>(null);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const products = await getProducts();
+//       const foundProduct = products.find((p: Product) => p._id === params.id);
+//       if (!foundProduct) return notFound();
+//       setProduct(foundProduct);
+//       setLoading(false);
+//     };
+
+//     fetchData();
+//   }, [params.id]);
+
+//   if (loading) {
+//     return (
+//       <div className="flex justify-center items-center h-screen">
+//         <Loader />
+//       </div>
+//     );
+//   }
+
+//   if (!product) return notFound();
+
+//   const handleAddToCart = (e: React.MouseEvent) => {
+//     e.preventDefault();
+//     Swal.fire({
+//       position: "top-right",
+//       icon: "success",
+//       title: `${product.title} added to cart`,
+//       showConfirmButton: false,
+//       timer: 2000,
+//     });
+//     addToCart(product);
+//   };
+
+//   return (
+//     <div className="container mx-auto px-4 py-8">
+//       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+//         {/* Image Section */}
+//         <div className="flex justify-center">
+//           <Image
+//             src={product.imageUrl || "/placeholder.png"}
+//             alt={product.title}
+//             width={500}
+//             height={500}
+//             className="rounded-lg shadow-md"
+//           />
+//         </div>
+//         {/* Product Details */}
+//         <div>
+//           <h1 className="text-4xl font-bold">{product.title}</h1>
+//           <p className="text-lg mt-4">{product.description}</p>
+//           <p className="text-2xl text-green-600 font-semibold">${product.price}</p>
+//           <button
+//             onClick={handleAddToCart}
+//             className="mt-6 bg-black text-white px-4 py-2 rounded-md hover:bg-white hover:text-black transition"
+//           >
+//             Add to Cart
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ProductDetail;
+
+
+
 "use client";
-import { getProducts } from "@/sanity/lib/fetch";
+
+import { useEffect, useState } from "react";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { addToCart } from "@/app/actions/actions";
 import Swal from "sweetalert2";
 import { Product } from "@/sanity/types/products";
-import { useEffect, useState } from "react";
+import { getProducts } from "@/sanity/lib/fetch";
+import { addToCart } from "@/app/actions/actions";
 import Loader from "@/components/Loader";
 
 const ProductDetail = ({ params }: { params: { id: string } }) => {
@@ -160,15 +243,29 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
   const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const products = await getProducts();
-      const foundProduct = products.find((p: Product) => p._id === params.id);
-      if (!foundProduct) return notFound();
-      setProduct(foundProduct);
-      setLoading(false);
+    const fetchProduct = async () => {
+      try {
+        const products = await getProducts();
+        const foundProduct = products.find((p: Product) => p._id === params.id);
+
+        if (!foundProduct) {
+          notFound();
+        } else {
+          setProduct(foundProduct);
+        }
+      } catch (error) {
+        console.error("Failed to fetch product:", error);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Failed to load product details. Please try again later.",
+        });
+      } finally {
+        setLoading(false);
+      }
     };
 
-    fetchData();
+    fetchProduct();
   }, [params.id]);
 
   if (loading) {
@@ -179,16 +276,19 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
     );
   }
 
-  if (!product) return notFound();
+  if (!product) {
+    return notFound();
+  }
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
     Swal.fire({
-      position: "top-right",
+      position: "top-end",
       icon: "success",
       title: `${product.title} added to cart`,
       showConfirmButton: false,
-      timer: 2000,
+      timer: 1500,
+      toast: true,
     });
     addToCart(product);
   };
@@ -197,23 +297,29 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
     <div className="container mx-auto px-4 py-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         {/* Image Section */}
-        <div className="flex justify-center">
+        <div className="relative aspect-square w-full max-w-[500px] mx-auto">
           <Image
             src={product.imageUrl || "/placeholder.png"}
             alt={product.title}
-            width={500}
-            height={500}
-            className="rounded-lg shadow-md"
+            fill
+            className="rounded-lg object-cover shadow-md"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority
           />
         </div>
+
         {/* Product Details */}
-        <div>
-          <h1 className="text-4xl font-bold">{product.title}</h1>
-          <p className="text-lg mt-4">{product.description}</p>
-          <p className="text-2xl text-green-600 font-semibold">${product.price}</p>
+        <div className="space-y-6">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+            {product.title}
+          </h1>
+          <p className="text-lg text-gray-700">{product.description}</p>
+          <p className="text-2xl text-green-600 font-semibold">
+            ${product.price.toFixed(2)}
+          </p>
           <button
             onClick={handleAddToCart}
-            className="mt-6 bg-black text-white px-4 py-2 rounded-md hover:bg-white hover:text-black transition"
+            className="w-full md:w-auto bg-[#029FAE] text-white px-6 py-3 rounded-md hover:bg-[#3dafb9] transition-colors duration-300"
           >
             Add to Cart
           </button>

@@ -11,57 +11,47 @@ const fontRoboto = Roboto({ weight: "400", subsets: ["latin"] });
 
 const ExploreNewProducts = () => {
   return (
-    <div className="py-10 px-6 md:px-10 lg:px-16 bg-gray-50">
-      <div className={`${fontRoboto.className}`}>
+    <div className="py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div className={`${fontRoboto.className} max-w-7xl mx-auto`}>
         {/* Heading */}
-        <h1 className="text-[#000000] text-2xl md:text-4xl uppercase font-bold text-center mb-10">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 uppercase mb-8">
           Explore New and Popular Styles
         </h1>
 
         {/* Grid Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-  {/* Slightly Smaller Large Image */}
-  <div className="lg:col-span-2 lg:pr-4">
-    <Image
-      src={category1}
-      alt="Large Featured Image"
-      width={500}  
-      height={50}
-      className="w-full h-auto rounded-lg"
-    />
-  </div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Large Image */}
+          <div className="lg:col-span-2">
+            <div className="relative w-full h-64 sm:h-80 md:h-96 lg:h-[500px] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <Image
+                src={category1}
+                alt="Large Featured Image"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
 
           {/* Small Images Grid */}
-          <div className="grid grid-cols-2 gap-4">
-            <Image
-              src={Fea_Prod4}
-              alt="Product 4"
-              width={200}
-              height={200}
-              className="w-full h-auto rounded-lg object-cover"
-            />
-            <Image
-              src={Fea_Prod1}
-              alt="Product 1"
-              width={200}
-              height={200}
-              className="w-full h-auto rounded-lg object-cover"
-            />
-            <Image
-              src={Fea_Prod1}
-              alt="Product 1 (Duplicate)"
-              width={200}
-              height={200}
-              className="w-full h-auto rounded-lg object-cover"
-            />
-            <Image
-              src={categ2}
-              alt="Category 2"
-              width={200}
-              height={200}
-              className="w-full h-auto rounded-lg object-cover"
-            />
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            {[
+              { src: Fea_Prod4, alt: "Product 4" },
+              { src: Fea_Prod1, alt: "Product 1" },
+              { src: Fea_Prod1, alt: "Product 1 (Duplicate)" },
+              { src: categ2, alt: "Category 2" },
+            ].map((image, index) => (
+              <div
+                key={index}
+                className="relative w-full h-40 sm:h-48 md:h-56 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
