@@ -10,7 +10,7 @@ import img6 from "@/public/images/Image (6).png";
 
 const NewsLetter = () => {
   return (
-    <section className="bg-gray-100 py-12">
+    <section className="bg-gradient-to-br from-[#e9ecef] to-[#40d5e2]  py-12">
       {/* Container */}
       <div className="max-w-6xl mx-auto px-6">
         {/* Newsletter Header */}

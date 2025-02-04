@@ -4,7 +4,9 @@ import { Inter } from "next/font/google";
 import Image from "next/image";
 import about_img from "@/public/images/Image Block.png";
 import OurPopularProducts from "@/components/OurPopularProducts";
+
 import Link from "next/link";
+import NewsLetter from "@/components/NewsLetter";
 
 const fontInter700 = Inter({ weight: "700", subsets: ["latin"] });
 const fontInter400 = Inter({ weight: "400", subsets: ["latin"] });
@@ -105,6 +107,7 @@ const About = () => {
         </div>
       </div>
       <div><OurPopularProducts /> </div>
+      <div className="mt-16 mb-16"><NewsLetter /></div>
     </div>
   );
 };

@@ -42,7 +42,7 @@ const CommentSection = () => {
         ></textarea>
         <button
           onClick={handleAddComment}
-          className="text-black bg-[#1b7581] hover: py-2 px-4 rounded-md  focus:outline-none focus:ring-2 focus:ring-black"
+          className="text-black bg-[#029FAE] hover: py-2 px-4 rounded-md  focus:outline-none focus:ring-2 focus:ring-black"
         >
           Submit
         </button>

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Inter } from "next/font/google";
 
 const fontInter700 = Inter({ weight: "700", subsets: ["latin"] });
@@ -40,35 +40,56 @@ const faqsData = [
 ];
 
 const Faqs = () => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  const toggleAccordion = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
-    <div className="px-4 md:px-16 lg:px-24 py-8">
+    <div className="px-4 md:px-16 lg:px-24 py-12 bg-gray-50">
       {/* Heading Section */}
-      <div className="text-center mb-12">
-        <h1
-          className={`${fontInter700.className} text-[32px] md:text-[48px] text-[#333333]`}
-        >
+      <div className="text-center mb-16 max-w-3xl mx-auto">
+        <h1 className={`${fontInter700.className} text-3xl md:text-4xl lg:text-5xl text-gray-900 mb-4`}>
           Frequently Asked Questions
         </h1>
-        <p
-          className={`${fontInter400.className} text-[14px] md:text-[16px] text-[#333333] mt-2`}
-        >
-          Find the answers to the most common questions our customers ask
-          about our products and services.
+        <p className={`${fontInter400.className} text-gray-600 text-base md:text-lg`}>
+          Find answers to common questions about our products, services, and policies.
         </p>
       </div>
 
       {/* FAQs Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         {faqsData.map((faq, index) => (
           <div
             key={index}
-            className="p-6 border rounded-lg shadow-md bg-[#80bbd8] hover:shadow-lg transition-shadow"
+            className="group transition-all duration-300 bg-gradient-to-br from-[#e9ecef] to-[#40d5e2]  rounded-xl shadow-sm hover:shadow-lg border border-gray-200"
           >
-            <h1 className="text-[18px] font-semibold flex justify-between items-center text-[#333333]">
-              {faq.question}
-              <span className="text-[#3498db] text-[24px] cursor-pointer">+</span>
-            </h1>
-            <p className="text-[14px] text-[#666666] mt-2">{faq.answer}</p>
+            <div
+              className="p-6 md:p-8 cursor-pointer"
+              onClick={() => toggleAccordion(index)}
+            >
+              <div className="flex justify-between items-start">
+                <h3 className={`${fontInter700.className} text-lg md:text-xl text-gray-900 pr-4`}>
+                  {faq.question}
+                </h3>
+                <span className="text-2xl text-blue-600 ml-2 transform transition-transform duration-300">
+                  {activeIndex === index ? '−' : '+'}
+                </span>
+              </div>
+            </div>
+            
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                activeIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <div className="px-6 md:px-8 pb-6 md:pb-8">
+                <p className={`${fontInter400.className} text-gray-600 leading-relaxed`}>
+                  {faq.answer}
+                </p>
+              </div>
+            </div>
           </div>
         ))}
       </div>

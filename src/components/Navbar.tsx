@@ -9,7 +9,6 @@ import profile from "../public/images/profile.png";
 import cart from "../public/images/cart.png";
 import comforty_logo from "../public/images/comforty_logo.png";
 
-
 const fontInter500 = Inter({ weight: "500", subsets: ["latin"] });
 const Navbar = () => {
   return (
@@ -39,7 +38,12 @@ const Navbar = () => {
               className="flex-grow bg-transparent focus:outline-none text-sm text-gray-700"
               placeholder="Search for varieties of sofa and much more..."
             />
-            <svg
+            <div>
+              <button className="text-sm text-slate-900 bg-[#40d5e2] font-bold rounded-md px-3 py-2 ml-2">
+                CtrlK
+              </button>
+            </div>
+            {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
               fill="none"
@@ -53,14 +57,14 @@ const Navbar = () => {
                 strokeLinejoin="round"
                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
               />
-            </svg>
+            </svg> */}
           </div>
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
             <Link href="/Wishlist">
               <div>
-                <Image src={wishlist} alt="Wishlist" height={30} width={30}/>
+                <Image src={wishlist} alt="Wishlist" height={30} width={30} />
               </div>
             </Link>
             <Link href="/Dashboard">
@@ -83,7 +87,7 @@ const Navbar = () => {
             className="flex-grow bg-transparent focus:outline-none text-sm text-gray-700"
             placeholder="Search for varieties of sofa and much more..."
           />
-          <svg
+          {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24px"
             fill="none"
@@ -97,7 +101,12 @@ const Navbar = () => {
               strokeLinejoin="round"
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
-          </svg>
+          </svg> */}
+          <div>
+            <button className="text-sm text-slate-900 font-bold bg-[#40d5e2] rounded-md px-3 py-2 ml-2">
+              CtrlK
+            </button>
+          </div>
         </div>
       </div>
 
@@ -112,19 +121,29 @@ const Navbar = () => {
             </li>
 
             <li className="hover:text-[#007580] hover:underline-offset-8 hover:underline">
-              <Link href="/Product">Product</Link> 
+              <Link href="/Product">Product</Link>
             </li>
 
             <li className="hover:text-[#007580] hover:underline-offset-8 hover:underline">
               <Link href="/About">About</Link>
             </li>
-
-            <Link href="/Contact">
-              <span className="text-[#636270] ml-[29rem] underline">
-                Contact:
-                <span className="text-[#272343] underline">(808) 555-0111</span>
-              </span>
-            </Link>
+            <li className="hover:text-[#007580] hover:underline-offset-8 hover:underline">
+              <Link href="/Contact">Contact</Link>
+            </li>
+            <div>
+              <button className="text-[#636270] ml-[29rem] bg-[#40d5e2] rounded-md px-3 py-2 "> <Link href={"/Login"}>Login</Link></button>
+            </div>
+            <div><button className="text-[#636270] bg-[#40d5e2] rounded-md px-3 py-2 "> <Link href={"/SignUp"}>Sign up</Link></button></div>
+            {/* <div>
+              <Link href="/Contact">
+                <span className="text-[#636270] ml-[29rem] underline">
+                  Contact:
+                  <span className="text-[#272343] underline">
+                    (808) 555-0111
+                  </span>
+                </span>
+              </Link>
+            </div> */}
           </ul>
         </nav>
 
@@ -167,5 +186,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

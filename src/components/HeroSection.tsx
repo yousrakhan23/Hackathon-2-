@@ -28,7 +28,7 @@ const HeroSection = () => {
 
   return (
     <div>
-      <div className="h-[550px] bg-[#F0F2F3] flex flex-col lg:flex-row items-center lg:justify-center">
+      <div className="h-[550px]  bg-gradient-to-br from-[#e9ecef] to-[#40d5e2] flex flex-col lg:flex-row items-center lg:justify-center">
         <div className="text-center lg:text-left lg:top-[229px] lg:left-[70px]">
           <p
             className={`${fontInter400} uppercase text-[#272343] pt-4 text-[14px] lg:pt-9 lg:ml-[25rem]`}

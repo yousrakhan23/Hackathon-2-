@@ -16,7 +16,7 @@ const fontPoopins500 = Poppins({ weight: "500", subsets: ["latin"] });
 const Contact = () => {
   return (
     <div>
-    <div className="min-h-screen bg-[#FFFFFF] flex items-center justify-center py-10 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#e9ecef] to-[#40d5e2]  flex items-center justify-center py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl w-full  shadow-md rounded-md p-8">
         <h2
           className={`${fontPoopins600.className} text-center text-2xl font-extrabold text-[#000000] mb-4`}

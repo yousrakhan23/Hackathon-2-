@@ -6,7 +6,7 @@ import Comments from "@/components/Comments";
 
 const NeedHelp = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#76a9db] to-[#e9ecef] flex flex-col items-center justify-center px-6 sm:px-12">
+    <div className="min-h-screen bg-gradient-to-br from-[#e9ecef] to-[#40d5e2] flex flex-col items-center justify-center px-6 sm:px-12">
       <motion.h1
         className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#2c3e50] text-center mb-6"
         initial={{ opacity: 0, y: -50 }}

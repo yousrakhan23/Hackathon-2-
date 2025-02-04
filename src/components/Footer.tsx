@@ -10,7 +10,7 @@ const fontInter400 = Inter({ weight: "400", subsets: ["latin"] });
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-gray-100 py-10 px-6">
+      <footer className="bg-gradient-to-br from-[#e9ecef] to-[#40d5e2]  py-10 px-6">
         <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>

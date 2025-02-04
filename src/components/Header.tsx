@@ -44,6 +44,13 @@ const Header = () => {
             <li className="list-none text-[#FFFFFF]  text-2xl hover:text-[#272343]">
               <Link href="/Contact">Contact</Link>
             </li>
+            <li className="list-none text-[#FFFFFF]  text-2xl hover:text-[#272343]">
+              <Link href="/Login">Login</Link>
+            </li>
+            <li className="list-none text-[#FFFFFF]  text-2xl hover:text-[#272343]">
+              <Link href="/SignUp">Sign up</Link>
+            </li>
+
           </SheetContent>
         </Sheet>
       </div>

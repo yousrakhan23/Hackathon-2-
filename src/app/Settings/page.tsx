@@ -34,7 +34,7 @@ const Settings = () => {
               />
             </div>
 
-            <button className="bg-[#80bbd8] hover:bg-[#64a5c4] text-white font-semibold py-2 px-4 rounded-lg transition">
+            <button className="bg-[#40d5e2]  text-white font-semibold py-2 px-4 rounded-lg transition">
               Save Changes
             </button>
           </form>
@@ -80,7 +80,7 @@ const Settings = () => {
               />
             </div>
 
-            <button className="bg-[#80bbd8] hover:bg-[#64a5c4] text-white font-semibold py-2 px-4 rounded-lg transition">
+            <button className="bg-[#40d5e2] text-white font-semibold py-2 px-4 rounded-lg transition">
               Update Password
             </button>
           </form>
@@ -112,7 +112,7 @@ const Settings = () => {
               </label>
             </div>
 
-            <button className="bg-[#80bbd8] hover:bg-[#64a5c4] text-white font-semibold py-2 px-4 rounded-lg transition">
+            <button className="bg-[#40d5e2] text-white font-semibold py-2 px-4 rounded-lg transition">
               Save Preferences
             </button>
           </form>

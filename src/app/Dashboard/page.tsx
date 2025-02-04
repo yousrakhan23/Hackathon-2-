@@ -4,42 +4,42 @@ const Dashboard = () => {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="hidden md:flex flex-col bg-[#80bbd8] text-white w-64 p-4">
+      <aside className="hidden md:flex flex-col bg-[#40d5e2] text-white w-64 p-4">
         <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
         <nav className="flex flex-col space-y-4">
           <Link
             href="/"
-            className="text-lg hover:bg-[#64a5c4] px-4 py-2 rounded-lg transition"
+            className="text-lg hover:bg-[#101314] px-4 py-2 rounded-lg transition"
           >
             Overview
           </Link>
           <Link
             href="Cart"
-            className="text-lg hover:bg-[#64a5c4] px-4 py-2 rounded-lg transition"
+            className="text-lg hover:bg-[#0d1011] px-4 py-2 rounded-lg transition"
           >
             Orders
           </Link>
           <Link
             href="Product"
-            className="text-lg hover:bg-[#64a5c4] px-4 py-2 rounded-lg transition"
+            className="text-lg hover:bg-[#0f1113] px-4 py-2 rounded-lg transition"
           >
             Products
           </Link>
           <Link
             href="/Customers"
-            className="text-lg hover:bg-[#64a5c4] px-4 py-2 rounded-lg transition"
+            className="text-lg hover:bg-[#050607] px-4 py-2 rounded-lg transition"
           >
             Customers
           </Link>
           <Link
             href="/Settings"
-            className="text-lg hover:bg-[#64a5c4] px-4 py-2 rounded-lg transition"
+            className="text-lg hover:bg-[#0c0f11] px-4 py-2 rounded-lg transition"
           >
             Settings
           </Link>
           <Link
             href="/Checkout"
-            className="text-lg hover:bg-[#64a5c4] px-4 py-2 rounded-lg transition"
+            className="text-lg hover:bg-[#0b0e0f] px-4 py-2 rounded-lg transition"
           >
             Checkout
           </Link>
@@ -51,7 +51,7 @@ const Dashboard = () => {
         {/* Header */}
         <header className="bg-white shadow-md px-4 sm:px-8 py-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-gray-800">Welcome Back!</h1>
-          <button className="bg-[#80bbd8] hover:bg-[#64a5c4] text-white px-4 py-2 rounded-lg transition">
+          <button className="bg-[#40d5e2] text-[#636270] px-4 py-2 rounded-lg transition">
             Logout
           </button>
         </header>
