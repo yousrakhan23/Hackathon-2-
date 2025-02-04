@@ -1,9 +1,10 @@
 
 
 "use client";
+import React, { useEffect, useState } from "react";
+
 import { Product } from "@/sanity/types/products";
 import { CgChevronRight } from "react-icons/cg";
-import React, { useEffect, useState } from "react";
 
 import { getCartItems } from "../actions/actions";
 import Link from "next/link";
