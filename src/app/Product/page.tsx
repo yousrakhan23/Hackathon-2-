@@ -99,7 +99,7 @@ const ProductPage = async () => {
               className="block border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               {/* Product Image */}
-              <div className="relative aspect-square w-full">
+              {/* <div className="relative aspect-square w-full">
                 <Image
                   src={product.imageUrl}
                   alt={product.title}
@@ -108,7 +108,22 @@ const ProductPage = async () => {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   priority={false}
                 />
-              </div>
+              </div> */}
+              {/* Product Image */}
+              <div className="relative aspect-square w-full">
+                {product.imageUrl ? (
+                  <Image
+                    src={product.imageUrl}
+                    alt={product.title}
+                    className="object-cover w-full h-full"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    priority={false}
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-200">No image available</div>
+                )}
+              </div>
 
               {/* Product Info */}
               <div className="p-4 bg-white">
