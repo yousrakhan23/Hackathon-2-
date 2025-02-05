@@ -227,6 +227,110 @@
 
 
 
+// "use client";
+
+// import { useEffect, useState } from "react";
+// import { notFound } from "next/navigation";
+// import Image from "next/image";
+// import Swal from "sweetalert2";
+// import { Product } from "@/sanity/types/products";
+// import { getProducts } from "@/sanity/lib/fetch";
+// import { addToCart } from "@/app/actions/actions";
+// import Loader from "@/components/Loader";
+
+// const ProductDetail = ({ params }: { params: { id: string } }) => {
+//   const [loading, setLoading] = useState(true);
+//   const [product, setProduct] = useState<Product | null>(null);
+
+//   useEffect(() => {
+//     const fetchProduct = async () => {
+//       try {
+//         const products = await getProducts();
+//         const foundProduct = products.find((p: Product) => p._id === params.id);
+
+//         if (!foundProduct) {
+//           notFound();
+//         } else {
+//           setProduct(foundProduct);
+//         }
+//       } catch (error) {
+//         console.error("Failed to fetch product:", error);
+//         Swal.fire({
+//           icon: "error",
+//           title: "Oops...",
+//           text: "Failed to load product details. Please try again later.",
+//         });
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchProduct();
+//   }, [params.id]);
+
+//   if (loading) {
+//     return (
+//       <div className="flex justify-center items-center h-screen">
+//         <Loader />
+//       </div>
+//     );
+//   }
+
+//   if (!product) {
+//     return notFound();
+//   }
+
+//   const handleAddToCart = (e: React.MouseEvent) => {
+//     e.preventDefault();
+//     Swal.fire({
+//       position: "top-end",
+//       icon: "success",
+//       title: `${product.title} added to cart`,
+//       showConfirmButton: false,
+//       timer: 1500,
+//       toast: true,
+//     });
+//     addToCart(product);
+//   };
+
+//   return (
+//     <div className="container mx-auto px-4 py-8">
+//       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+//         {/* Image Section */}
+//         <div className="relative aspect-square w-full max-w-[500px] mx-auto">
+//           <Image
+//             src={product.imageUrl || "/placeholder.png"}
+//             alt={product.title}
+//             fill
+//             className="rounded-lg object-cover shadow-md"
+//             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+//             priority
+//           />
+//         </div>
+
+//         {/* Product Details */}
+//         <div className="space-y-6">
+//           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+//             {product.title}
+//           </h1>
+//           <p className="text-lg text-gray-700">{product.description}</p>
+//           <p className="text-2xl text-green-600 font-semibold">
+//             ${product.price.toFixed(2)}
+//           </p>
+//           <button
+//             onClick={handleAddToCart}
+//             className="w-full md:w-auto bg-[#029FAE] text-white px-6 py-3 rounded-md hover:bg-[#3dafb9] transition-colors duration-300"
+//           >
+//             Add to Cart
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ProductDetail;
+
 "use client";
 
 import { useEffect, useState } from "react";
@@ -238,9 +342,21 @@ import { getProducts } from "@/sanity/lib/fetch";
 import { addToCart } from "@/app/actions/actions";
 import Loader from "@/components/Loader";
 
+const placeholderProduct: Product = {
+  _id: "",
+  imageUrl: "/placeholder.png",
+  title: "Loading Product...",
+  description: "Product details are being fetched.",
+  price: 0,
+  productName: "Loading Product...",
+  _type: "product",
+  slug: { _type: "slug", current: "loading-product" },
+  inventory: 0,
+};
+
 const ProductDetail = ({ params }: { params: { id: string } }) => {
+  const [product, setProduct] = useState<Product>(placeholderProduct);
   const [loading, setLoading] = useState(true);
-  const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -276,7 +392,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
     );
   }
 
-  if (!product) {
+  if (!product._id) {
     return notFound();
   }
 
@@ -299,7 +415,7 @@ const ProductDetail = ({ params }: { params: { id: string } }) => {
         {/* Image Section */}
         <div className="relative aspect-square w-full max-w-[500px] mx-auto">
           <Image
-            src={product.imageUrl || "/placeholder.png"}
+            src={product.imageUrl}
             alt={product.title}
             fill
             className="rounded-lg object-cover shadow-md"

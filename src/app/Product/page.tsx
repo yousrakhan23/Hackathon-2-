@@ -63,7 +63,7 @@
 
 // export default ProductPage;
 
-
+import React from "react";
 import { getProducts } from "@/sanity/lib/fetch";
 import Link from "next/link";
 import Image from "next/image";
