@@ -35,7 +35,7 @@ const LiveChat = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8f9fa] to-[#0e63b8] flex flex-col items-center justify-center px-6 sm:px-12">
+    <div className="min-h-screen bg-gradient-to-br from-[#e9ecef] to-[#40d5e2] flex flex-col items-center justify-center px-6 sm:px-12">
       <motion.h1
         className="text-4xl sm:text-5xl font-bold text-[#2c3e50] mb-6 text-center"
         initial={{ opacity: 0, y: -50 }}
