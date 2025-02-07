@@ -1,8 +1,10 @@
 HACKATHON 2025 (day 1 to day 7)
 
+GITHUB REPO:
 https://github.com/yousrakhan23/Hackathon-2-.git
 
-https://hackathon-2-5ia1.vercel.app 
+VERCEL DEPLOYMENT LINK:
+https://hackathon-202-2.vercel.app/
 
 
 Comforty Marketplace
@@ -88,3 +90,7 @@ Create a new branch for your feature or bug fix.
 Submit a pull request with a detailed description of the changes made.
 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
+
+DAY 1 TO DAY 7 DOCUMENTATION.
+https://drive.google.com/drive/folders/1gvmypY6I32llGq_ZC11XgbMvXLO2HPit?usp=sharing
